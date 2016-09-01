@@ -102,11 +102,6 @@ function comprehensions(expression) {
   return formatComprehensions(expressionParams[0], expressionParams[1], expressionParams[2]);
 }
 
-var ciao = comprehensions('[x |x<- [1..100], x*2 >= 12, x<100, x*2<160]  ');
-
-
-console.log(ciao);
-
 
 
 
