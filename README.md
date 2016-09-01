@@ -17,3 +17,7 @@ Examples of use:
   factory([1,2,3,4,5,6,7,8,9,10]);
   ```
   will output => [6, 7, 8, 9, 10]
+  
+  
+#### License
+This project is licensed under the terms of MIT License. See the LICENSE file for more info.
