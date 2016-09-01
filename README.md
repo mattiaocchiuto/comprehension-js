@@ -1,6 +1,7 @@
 # comprehension-js
-List comprehension from haskell to javascript
+### List comprehension from haskell to javascript
 
+To easily understand what list comprehensions are in Haskell check out [this link](http://learnyouahaskell.com/starting-out#im-a-list-comprehension).
 
 Examples of use:
 
