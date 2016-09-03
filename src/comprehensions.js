@@ -30,7 +30,15 @@
   // Formatta l'array da una scrittura [1..5] a [1,2,3,4,5]
   // per ora assumiamo array numerici
   function completeArray(arrayString) {
-    if (arrayString.indexOf('..') != -1) {
+    if (typeof arrayString != 'string') {
+      throw new TypeError('The "arrayString" parameter has to be a string.');
+    }
+
+    if (/\[(.*)\]/.test(arrayString)) {
+      arrayString = arrayString.replace(/\[(.*)\]/, '$1');
+    }
+
+    if (/(.*\.\..*)/.test(arrayString)) {
       var elems = arrayString.split('..');
 
       var firstElem = _parseIfNum(elems[0]);
