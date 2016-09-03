@@ -9,7 +9,7 @@ Examples of use:
   ```javascript
   comprehensions('[x | x<- [1..100], x*2 >= 12, x<100, x*2<160]');
   ```
-  will output => [6, 7, 8, 9, 10]
+  will output => [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
 
 2. Using the generated function with a array
   ```javascript
