@@ -96,11 +96,10 @@ function formatComprehensions(outputExpression, otherArgs) {
  */
 function comprehensions(expression) {
 
-  expression = expression
+  expressionParams = expression
                 .replace(/ +/g, '')
-                .replace(/\[(.*)\|((.*)(,?).*)\]/, '$1||$2||$3');
-  
-  expressionParams = expression.split('||');
+                .replace(/\[(.*)\|((.*)(,?).*)\]/, '$1||$2||$3')
+                .split('||');
   
   return formatComprehensions(expressionParams[0], expressionParams[1]);
 }

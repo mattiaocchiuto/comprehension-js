@@ -1,6 +1,6 @@
 {
   "name": "comprehension-js",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "List comprehension from haskell to javascript",
   "main": "comprehension.js",
   "scripts": {
