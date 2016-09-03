@@ -30,6 +30,8 @@
   // Formatta l'array da una scrittura [1..5] a [1,2,3,4,5]
   // per ora assumiamo array numerici
   function completeArray(arrayString) {
+    var interval = 1;
+
     if (typeof arrayString != 'string') {
       throw new TypeError('The "arrayString" parameter has to be a string.');
     }
@@ -38,18 +40,33 @@
       arrayString = arrayString.replace(/\[(.*)\]/, '$1');
     }
 
-    if (/(.*\.\..*)/.test(arrayString)) {
-      var elems = arrayString.split('..');
+    if (/(.*)\.\.(.*)/.test(arrayString)) {
+      var elems = arrayString.replace(/(.*)\.\.(.*)/, '$1||$2').split('||');
+      var firstElem;
+      var lastElem;
 
-      var firstElem = _parseIfNum(elems[0]);
-      var lastElem = _parseIfNum(elems[1]);
+      if (elems[0].indexOf(',') != -1) {
+        var firstElemParams = elems[0].split(',');
+
+        interval = _parseIfNum(firstElemParams[1]) - _parseIfNum(firstElemParams[0]);
+        firstElem = _parseIfNum(firstElemParams[0]);
+      }
+
+      firstElem = _parseIfNum(elems[0]);
+      lastElem = _parseIfNum(elems[1]);
+
+      if (lastElem < firstElem) {
+        return [];
+      }
 
       return Array(lastElem).fill(firstElem).reduce(function (acc, val) {
-        var valToAdd = !acc.lastElem ? val : acc.lastElem + 1;
+        var valToAdd = !acc.lastElem ? val : acc.lastElem + interval;
 
-        acc.result.push(valToAdd);
-        acc.lastElem = valToAdd;
-
+        if (valToAdd <= lastElem) {
+          acc.result.push(valToAdd);
+          acc.lastElem = valToAdd;
+        }
+        
         return acc;
       }, { result: [], lastElem: undefined }).result;
     } else {

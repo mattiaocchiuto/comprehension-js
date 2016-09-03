@@ -40,5 +40,23 @@ describe('Comprehension Test', () => {
 
       expect(output).to.eql([1,2,3,4,5,6,7,8,9,10]);
     });
+
+    it('With interval signs and parenthesis and start equal to end', () => {
+      var output = completeArray('[1..1]');
+
+      expect(output).to.eql([1]);
+    });
+
+    it('With interval signs and parenthesis and start less than end', () => {
+      var output = completeArray('[1..-1]');
+
+      expect(output).to.eql([]);
+    });
+
+    it('With interval signs and parenthesis and interval spec', () => {
+      var output = completeArray('[1,3..10]');
+
+      expect(output).to.eql([1,3,5,7,9]);
+    });
   });
 });
