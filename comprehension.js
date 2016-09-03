@@ -1,13 +1,8 @@
-console.clear();
-
-// TODILIST:
-// 1) metti polyfill reduce, map, fill
-
 /**
  * @param {String} - test
  * @return {Boolean}
  */
-function isInputSet(test) {
+function isInputSet(test) { 
   return test.indexOf('<-') != -1;
 }
 
@@ -42,17 +37,25 @@ function completeArray(arrayString) {
   }
 }
 
-function formatComprehensions(outputExpression, varName, otherArgs) {
+function formatComprehensions(outputExpression, otherArgs) {
   var inputSet;
+  var varName;
   var rightSide = otherArgs.split(',');
   var predicates = []; // Filtri da applicare.
+
+  inputSet = rightSide.shift();
+
+  // Check that an input set has been passed.
+  if (!isInputSet(inputSet)) {
+    throw new Error('You have to specify an input set.');
+  }
+
+  // Get the varName.
+  varName = inputSet.replace(/(\w)<-(.*)/, '$1');
  
+  // Fill the predicates array.
   rightSide.map(function (el) {
-    if (isInputSet(el) && !inputSet) {
-      inputSet = el;
-    } else {
-      predicates.push(el);
-    }
+    predicates.push(el);
   });
   
   function transformationFunction(input) {
@@ -77,7 +80,7 @@ function formatComprehensions(outputExpression, varName, otherArgs) {
     return results;
   }
   
-  if (inputSet) {
+  if (/(.*)<-\[(.*)\]/.test(inputSet)) {
     var inputSetParams = inputSet.replace(/(.*)<-\[(.*)\]/, '$1||$2').split('||');
     var inputSetFormatted = completeArray(inputSetParams[1]);
     
@@ -95,13 +98,9 @@ function comprehensions(expression) {
 
   expression = expression
                 .replace(/ +/g, '')
-                .replace(/\[(.*([a-z]).*)\|((.*)(,?).*)\]/, '$1||$2||$3');
+                .replace(/\[(.*)\|((.*)(,?).*)\]/, '$1||$2||$3');
   
   expressionParams = expression.split('||');
   
-  return formatComprehensions(expressionParams[0], expressionParams[1], expressionParams[2]);
+  return formatComprehensions(expressionParams[0], expressionParams[1]);
 }
-
-
-
-
