@@ -1,7 +1,8 @@
 'use strict';
 
 let expect = require('chai').expect;
-let comprehensions = require('../src/comprehension.js').comprehensions;
+let comprehensions = require('../src/comprehensions.js').comprehensions;
+let completeArray = require('../src/comprehensions.js').completeArray;
 
 describe('Comprehension Test', () => {
   beforeEach(() => {
@@ -12,7 +13,7 @@ describe('Comprehension Test', () => {
     return true;
   });
 
-  describe('Base test', () => {
+  describe('Comprehensions function tests', () => {
     it('With generated input', () => {
       var output = comprehensions('[x | x<- [1..100], x*2 >= 12, x<100, x*2<40]');
       
@@ -24,6 +25,20 @@ describe('Comprehension Test', () => {
       var output = factory([1,2,3,4,5,6,7,8,9,10]);
 
       expect(output).to.eql([6, 7, 8, 9, 10]);
+    });
+  });
+
+  describe('CompleteArray function tests', () => {
+    it('With interval signs and no parenthesis', () => {
+      var output = completeArray('1..10');
+
+      expect(output).to.eql([1,2,3,4,5,6,7,8,9,10]);
+    });
+
+    it('With interval signs and parenthesis', () => {
+      var output = completeArray('[1..10]');
+
+      expect(output).to.eql([1,2,3,4,5,6,7,8,9,10]);
     });
   });
 });
