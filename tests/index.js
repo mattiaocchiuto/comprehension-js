@@ -1,8 +1,8 @@
 'use strict';
 
 let expect = require('chai').expect;
-let comprehensions = require('../src/comprehensions.js').comprehensions;
-let completeArray = require('../src/comprehensions.js').completeArray;
+let comprehensions = require('../src/index.js').comprehensions;
+let completeArray = require('../src/index.js').completeArray;
 
 describe('Comprehension Test', () => {
   beforeEach(() => {
