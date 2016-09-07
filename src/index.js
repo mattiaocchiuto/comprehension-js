@@ -1,4 +1,4 @@
-;(function (factory) {
+;(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module and set browser global
     define([], factory());
@@ -6,9 +6,9 @@
     module.exports = factory();
   } else {
     // Browser globals
-    root = factory();
+    root.Comprehensions = factory();
   }
-} (function () {
+} (window, function () {
   /**
    * @private
    * @param {String} - test
