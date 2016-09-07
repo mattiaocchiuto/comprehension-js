@@ -6,7 +6,7 @@
     module.exports = factory();
   } else {
     // Browser globals
-    root.Comprehensions = factory();
+    root && (root.Comprehensions = factory());
   }
 } (window, function () {
   /**
