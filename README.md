@@ -5,7 +5,7 @@ List comprehension from haskell to javascript
 
 To easily understand what list comprehensions are in Haskell check out [this link](http://learnyouahaskell.com/starting-out#im-a-list-comprehension).
 
-### Installation
+## Installation
 From npm
 ```
 npm i comprehension-js
@@ -20,7 +20,7 @@ From CDN
 var comprehensions = Comprehensions.comprehensions;
 </script>
 ```
-### Examples of use:
+## Examples of use:
 
 1. Passing an input set in the description
   ```javascript
@@ -35,6 +35,21 @@ var comprehensions = Comprehensions.comprehensions;
   ```
   will output => [6, 7, 8, 9, 10]
   
+##Development
+Fetch the dependencies by
+```
+npm install
+```
+then
+### Building
+```
+npm build
+```
+
+### Running test
+```
+npm build
+```
   
-### License
+## License
 This project is licensed under the terms of MIT License. See the LICENSE file for more info.
