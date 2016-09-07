@@ -65,7 +65,7 @@ npm build
 
 ### Running test
 ```
-npm build
+npm test
 ```
   
 ## License
