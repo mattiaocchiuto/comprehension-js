@@ -2,7 +2,7 @@
   "name": "comprehension-js",
   "version": "0.0.4",
   "description": "List comprehension from haskell to javascript",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "mocha tests/"
   },
