@@ -22,13 +22,13 @@ var comprehensions = Comprehensions.comprehensions;
 ```
 ## Examples of use:
 
-1. Passing an input set in the description
+1. Declaring an input set in the input description section
   ```javascript
   comprehensions('[x | x<- [1..100], x*2 >= 12, x<100, x*2<160]');
   ```
   will output => [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
 
-2. Using the generated function with an input array
+2. Using the generated function to modifiy an input array
   ```javascript
   var factory = comprehensions('[x | x<- xs, x*2 >= 12, x<100, x*2<160]');
   factory([1,2,3,4,5,6,7,8,9,10]);
