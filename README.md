@@ -47,7 +47,7 @@ Taking this spec as example: _[x*3 | x<- [1..10], x/2>=2, x*5<160]_ we have that
 3. The portion after the pipe and before the first comma -_x<- [1..10]_- is the *input set*, here we have some accepted forms:
   1. _x<-[first..last]_ for example x<-[1..10] represent an array composed by the first 10 int [1,2,3,4,5,6,7,8,9,10]
   2. _x<-[first,second..last]_ for example x<-[1,3..10] represent an array where each outut value is evaluated considering the step offset between the first tho values [1,3,5,7,9]
-  3. _x<-xs_ considering any kind of array
+  3. _x<-xs_ considering any kind of array (when this form is used the ```comprehensions```function will be return a factory function especting an input array to which apply the tranformation according to the input spec).
 4. The portion after the first array separated by commas -_x/2>=2_, _x*5<16_- represents the filter functions
 
 So, if we call the comprehensions function passing the spec example as input we will receive as output **[12, 15, 18, 21, 24, 27, 30]**.
