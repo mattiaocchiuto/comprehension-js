@@ -2,9 +2,10 @@
   "name": "comprehension-js",
   "version": "0.0.5",
   "description": "List comprehension from haskell to javascript",
-  "main": "src/index.js",
+  "main": "dist/index.min.js",
   "scripts": {
-    "test": "mocha tests/"
+    "test": "mocha tests/",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/mattiaocchiuto/comprehension-js#readme",
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^3.0.2"
+    "mocha": "^3.0.2",
+    "webpack": "^1.13.2"
   }
 }
