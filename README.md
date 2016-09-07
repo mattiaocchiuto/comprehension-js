@@ -15,7 +15,7 @@ var comprehensions = require('comprehension-js').comprehensions;
 ```
 From CDN
 ```html
-<script src="https://unpkg.com/comprehension-js/src/index.js"></script>
+<script src="https://unpkg.com/comprehension-js/dist/index.min.js"></script>
 <script>
 var comprehensions = Comprehensions.comprehensions;
 </script>
