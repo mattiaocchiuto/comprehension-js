@@ -6,9 +6,9 @@
     module.exports = factory();
   } else {
     // Browser globals
-    root && (root.Comprehensions = factory());
+    root.Comprehensions = factory();
   }
-} (window, function () {
+} ((typeof window != 'undefined' ? window : {}), function () {
   /**
    * @private
    * @param {String} - test
