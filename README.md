@@ -1,5 +1,5 @@
 # comprehension-js
-[![Build Status](https://travis-ci.org/mattiaocchiuto/comprehension-js.svg?branch=master)](https://travis-ci.org/phuu/comprehension-js)
+[![Build Status](https://travis-ci.org/mattiaocchiuto/comprehension-js.svg?branch=master)](https://travis-ci.org/phuu/comprehension-js) [![npm version](https://badge.fury.io/js/comprehension-js.svg)](https://badge.fury.io/js/comprehension-js)
 
 List comprehension from haskell to javascript
 
