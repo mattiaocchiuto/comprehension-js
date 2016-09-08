@@ -3,7 +3,7 @@
 
 List comprehension from haskell to javascript.
 
-An easy way to build and transform array in a concise and declarative way (thanks to Haskell).
+An easy way to build and transform array using a concise and declarative description (thanks to Haskell).
 
 To easily understand what list comprehensions are in Haskell check out [this link](http://learnyouahaskell.com/starting-out#im-a-list-comprehension).
 
