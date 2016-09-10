@@ -1,11 +1,17 @@
-var webpack = require('webpack');
+var webpack = require("webpack");
+
+var libraryName = 'Comprehensions';
+var fileName = 'index';
 
 module.exports = {
-    entry: "./src/index.js",
+    entry: "./src/" + fileName + ".js",
+    devtool: "source-map",
     output: {
-        libraryTarget: "umd",
         path: __dirname,
-        filename: "dist/index.min.js"
+        filename: "dist/" + fileName + ".min.js",
+        libraryTarget: "umd",
+        library: libraryName,
+        umdNamedDefine: true
     },
     module: {},
     plugins: [
