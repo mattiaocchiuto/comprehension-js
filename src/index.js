@@ -8,7 +8,7 @@
     // Browser globals
     root.Comprehensions = factory();
   }
-} ((typeof window != 'undefined' ? window : {}), function () {
+} ((typeof this != 'undefined' ? this : {}), function () {
   // Start Polyfill
   if (!Array.isArray) {
     Array.isArray = function (arg) {
