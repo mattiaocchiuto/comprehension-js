@@ -5,6 +5,7 @@
   "main": "dist/index.min.js",
   "scripts": {
     "test": "mocha tests/",
+    "tests": "mocha tests/ --compilers js:babel-core/register",
     "build": "webpack"
   },
   "repository": {
@@ -20,9 +21,18 @@
   "devDependencies": {
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
+    "babel-polyfill": "^6.13.0",
     "babel-preset-es2015": "^6.14.0",
     "chai": "^3.5.0",
+    "eslint": "^3.5.0",
+    "eslint-config-airbnb": "^11.1.0",
+    "eslint-plugin-import": "^1.15.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-react": "^6.2.1",
     "mocha": "^3.0.2",
     "webpack": "^1.13.2"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.13.0"
   }
 }
