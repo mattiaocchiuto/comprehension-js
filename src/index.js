@@ -1,5 +1,7 @@
 'use strict';
 
+import "babel-polyfill";
+
 module.exports = (function () {
     let PATTERNS = {
         generalStructure: {
