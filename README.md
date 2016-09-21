@@ -13,7 +13,7 @@ From npm
 npm i comprehension-js
 ```
 ```javascript
-var comprehensions = require('comprehension-js').comprehensions;
+import { comprehensions } from 'comprehension-js';
 ```
 From CDN
 ```html
@@ -32,7 +32,7 @@ var comprehensions = Comprehensions.comprehensions;
 
 2. Using the generated function to modifiy an input array
   ```javascript
-  var factory = comprehensions('[x | x<- xs, x*2 >= 12, x<100, x*2<160]');
+  let factory = comprehensions('[x | x<- xs, x*2 >= 12, x<100, x*2<160]');
   factory([1,2,3,4,5,6,7,8,9,10]);
   ```
   will output => [6, 7, 8, 9, 10]
