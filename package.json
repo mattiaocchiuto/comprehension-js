@@ -4,8 +4,7 @@
   "description": "List comprehension from haskell to javascript",
   "main": "dist/index.min.js",
   "scripts": {
-    "test": "mocha tests/",
-    "tests": "mocha tests/ --compilers js:babel-core/register",
+    "test": "mocha tests/ --compilers js:babel-core/register",
     "build": "webpack"
   },
   "repository": {
